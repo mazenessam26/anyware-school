@@ -14,14 +14,6 @@ npm i
 npm start
 ```
 
-# the .env file (you will need to put it in the src folder in the Backend):
-```
-PORT=5000
-MONGODB_URI='mongodb+srv://mazendarwish69_db_user:anyware@anyware.hs8n03u.mongodb.net/'
-NODE_ENV=development
-
-```
-
 ## Running Backend tests:
 ```
 cd Backend
