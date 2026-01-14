@@ -1,0 +1,20 @@
+{
+    "welcome": "مرحبا",
+    "dashboard": "لوحة التحكم",
+    "schedule": "الجدول",
+    "courses": "المقررات",
+    "gradebook": "السجل الأكاديمي",
+    "performance": "الأداء",
+    "announcement": "الإعلانات",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "exams_time": "وقت الامتحانات",
+    "exam_tips_subtitle": "ها نحن هنا، هل أنت مستعد للنضال؟ لا تقلق، لقد أعددنا بعض النصائح للاستعداد لامتحاناتك.",
+    "exam_tips_quote": "لا يحدث شيء حتى يتحرك شيء",
+    "view_exam_tips": "عرض نصائح الامتحان",
+    "announcements": "الإعلانات",
+    "whats_due": "ما هو المستحق",
+    "all": "الكل",
+    "start_quiz": "ابدأ الاختبار",
+    "solve_assignment": "حل الواجب"
+  }
