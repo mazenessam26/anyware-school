@@ -22,4 +22,13 @@ NODE_ENV=development
 
 ```
 
+## Running Backend tests:
+```
+cd Backend
+npm test
+```
+
+the video link: https://drive.google.com/file/d/19R5fYl7wdOKU6u882wFwmd4aZ9VockAa/view?usp=sharing
+
+
 
