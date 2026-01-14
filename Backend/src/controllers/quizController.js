@@ -1,12 +1,11 @@
-const Quiz = require('../models/quiz');
-const { validationResult } = require('express-validator');
+const Quiz = require("../models/quiz");
+const { validationResult } = require("express-validator");
 
 // Get all quizzes
 exports.getAllQuizzes = async (req, res) => {
   try {
-    const quizzes = await Quiz.find()
-      .sort({ dueDate: 1 });
-    
+    const quizzes = await Quiz.find().sort({ dueto: 1 }).limit(2);
+
     res.status(200).json({
       success: true,
       count: quizzes.length,
@@ -15,7 +14,7 @@ exports.getAllQuizzes = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error fetching quizzes',
+      message: "Error fetching quizzes",
       error: error.message,
     });
   }
@@ -25,14 +24,14 @@ exports.getAllQuizzes = async (req, res) => {
 exports.getQuizById = async (req, res) => {
   try {
     const quiz = await Quiz.findById(req.params.id);
-    
+
     if (!quiz) {
       return res.status(404).json({
         success: false,
-        message: 'Quiz not found',
+        message: "Quiz not found",
       });
     }
-    
+
     res.status(200).json({
       success: true,
       data: quiz,
@@ -40,7 +39,7 @@ exports.getQuizById = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error fetching quiz',
+      message: "Error fetching quiz",
       error: error.message,
     });
   }
@@ -58,7 +57,7 @@ exports.createQuiz = async (req, res) => {
     }
 
     const quiz = await Quiz.create(req.body);
-    
+
     res.status(201).json({
       success: true,
       data: quiz,
@@ -66,7 +65,7 @@ exports.createQuiz = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error creating quiz',
+      message: "Error creating quiz",
       error: error.message,
     });
   }
@@ -75,22 +74,18 @@ exports.createQuiz = async (req, res) => {
 // Update quiz
 exports.updateQuiz = async (req, res) => {
   try {
-    const quiz = await Quiz.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-        runValidators: true,
-      }
-    );
-    
+    const quiz = await Quiz.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
     if (!quiz) {
       return res.status(404).json({
         success: false,
-        message: 'Quiz not found',
+        message: "Quiz not found",
       });
     }
-    
+
     res.status(200).json({
       success: true,
       data: quiz,
@@ -98,7 +93,7 @@ exports.updateQuiz = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error updating quiz',
+      message: "Error updating quiz",
       error: error.message,
     });
   }
@@ -108,22 +103,22 @@ exports.updateQuiz = async (req, res) => {
 exports.deleteQuiz = async (req, res) => {
   try {
     const quiz = await Quiz.findByIdAndDelete(req.params.id);
-    
+
     if (!quiz) {
       return res.status(404).json({
         success: false,
-        message: 'Quiz not found',
+        message: "Quiz not found",
       });
     }
-    
+
     res.status(200).json({
       success: true,
-      message: 'Quiz deleted successfully',
+      message: "Quiz deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error deleting quiz',
+      message: "Error deleting quiz",
       error: error.message,
     });
   }

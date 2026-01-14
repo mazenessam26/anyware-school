@@ -1,5 +1,16 @@
 const mongoose = require('mongoose');
+
+const status = ['quiz','assignment'];
+
 const quizschema = mongoose.Schema({
+    title:{
+        type:String,
+        required: true
+    },
+    type:{
+        type:String,
+        enum:status
+    },
     course:{
         type:String,
         required:true
